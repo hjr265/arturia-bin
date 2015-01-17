@@ -1,0 +1,24 @@
+{
+  "name": "Arturia-bin",
+  "version": "0.1.0",
+  "description": "",
+  "scripts": {
+    "postinstall": "./node_modules/.bin/bower install --allow-root"
+  },
+  "author": "Mahmud Ridwan <m@hjr265.me>",
+  "license": "Proprietary",
+  "dependencies": {
+    "body-parser": "^1.10.1",
+    "bower": "^1.3.12",
+    "coffee-script": "^1.8.0",
+    "connect-assets": "^4.3.3",
+    "express": "^4.11.0",
+    "iced-coffee-script": "^1.8.0-c",
+    "jade": "^1.9.0",
+    "mongoose": "^3.8.21",
+    "mongoose-shortid": "^0.4.2",
+    "request": "^2.51.0",
+    "stylus": "^0.49.3",
+    "underscore": "^1.7.0"
+  }
+}

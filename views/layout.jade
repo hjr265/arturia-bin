@@ -1,0 +1,16 @@
+doctype html
+html(ng-app='arturiaBinApp')
+	head 
+		meta(charset='utf-8')
+		title Arturia:Bin
+
+		base(href='/')
+
+		link(rel='stylesheet' href='//fonts.googleapis.com/css?family=Maven+Pro|Ubuntu+Mono')
+		!= css('screen')
+
+	body(ng-controller='RootCtrl')
+		div
+			div(ng-view)
+
+		!= js('arturia-bin')

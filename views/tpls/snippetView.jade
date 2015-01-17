@@ -1,0 +1,31 @@
+.container
+	.row
+		.col-xs-12
+			a(href='/' style='display: inline-block; height: 44px; margin: 0 0 -6px 15px; overflow: hidden;')
+				img(src='/img/logo.png' height='48px' style='vertical-align: text-top;')
+			.panel.panel-default
+				.panel-body
+					.form-group(style='position: relative;')
+						span.small.text-right.text-muted(style='position: absolute; right: 0; padding: 10.5px;') {{language}}
+						pre(style='min-height: 254px; margin: 0; font-size: 1em;' ng-bind-html='snippet.source | highlight')
+					
+					table.table(style='margin: 0;')
+						thead
+							tr 
+								td Input
+								td Output
+
+						tbody
+							tr
+								td.pre.small(style='width: 50%; border: 0; white-space: pre;')
+									span(ng-show='snippet.input') {{snippet.input}}
+									span.text-muted(ng-hide='snippet.input') &mdash;
+
+								td.pre.small(style='width: 50%; border: 0; white-space: pre;')
+									span(ng-show='snippet.output') {{snippet.output}}
+									span.text-muted(ng-hide='snippet.output')
+										span(ng-show='snippet.program.status') &mdash;
+										span(ng-hide='snippet.program.status') Waiting&#8230;
+									br
+									p.text-muted(ng-show='snippet.program.status') Program {{snippet.program.status}}
+						
