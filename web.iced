@@ -84,7 +84,7 @@ app.route('/api/snippets')
 				src: "data:base64,#{new Buffer(body.input.substr(0, 65536)).toString('base64')}"
 			limits:
 				cpu: 2*1e9
-				memory: 33554432
+				memory: 268435456
 		}
 	, defer err, resp, body
 	if err?
