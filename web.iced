@@ -27,6 +27,10 @@ Snippet = mongoose.model 'Snippet', new mongoose.Schema
 		id:
 			type: String
 
+		build:
+			status:
+				type: String
+
 		status:
 			type: String
 
@@ -110,7 +114,7 @@ app.route('/api/snippets/:id')
 	if err?
 		return next err
 
-	if snip.program.status not in ['exited', 'killed', 'failed']
+	if snip.program.status not in ['exited', 'killed', 'failed', 'skipped']
 		await request.get "https://api.arturia.io/programs/#{snip.program.id}?secret=#{process.env.ARTURIA_SECRET}", defer err, resp, body
 		if err?
 			return console.log err
@@ -118,7 +122,7 @@ app.route('/api/snippets/:id')
 		body = JSON.parse body
 		_.extend snip.program, body
 
-		if snip.program.status in ['exited', 'killed', 'failed']
+		if snip.program.status in ['exited', 'killed']
 			await request.get body.stdout.src, defer err, resp, body
 			if err?
 				return next err

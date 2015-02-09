@@ -78,7 +78,7 @@ angular.module('arturiaBinApp', ['ngRoute'])
 			input: ''
 		}
 	]
-	
+
 	$scope.stack = _.sample _.pluck $scope.languages, 'stack'
 	_.extend $scope, _.sample _.where $scope.samples,
 		stack: $scope.stack
@@ -103,7 +103,7 @@ angular.module('arturiaBinApp', ['ngRoute'])
 				stack: $scope.snippet.stack
 			).label
 
-			if $scope.snippet.program.status not in ['exited', 'killed', 'failed']
+			if $scope.snippet.program.status not in ['exited', 'killed', 'failed', 'skipped']
 				_.delay =>
 					$scope.fetch()
 				, 500

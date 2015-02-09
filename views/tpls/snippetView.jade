@@ -27,5 +27,6 @@
 										span(ng-show='snippet.program.status') &mdash;
 										span(ng-hide='snippet.program.status') Waiting&#8230;
 									br
-									p.text-muted(ng-show='snippet.program.status') Program {{snippet.program.status}}
+									p.text-muted(ng-if='snippet.program.status && snippet.program.build.status != "failed"') Program {{snippet.program.status}}
+									p.text-muted(ng-if='snippet.program.status && snippet.program.build.status == "failed"') Build failed
 						
