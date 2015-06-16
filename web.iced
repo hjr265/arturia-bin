@@ -87,6 +87,7 @@ app.route('/api/snippets')
 			stdin:
 				src: "data:base64,#{new Buffer(body.input.substr(0, 65536)).toString('base64')}"
 			limits:
+				time: 4*1e9
 				cpu: 2*1e9
 				memory: 268435456
 		}
