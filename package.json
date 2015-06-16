@@ -16,7 +16,7 @@
     "iced-coffee-script": "^1.8.0-c",
     "jade": "^1.9.0",
     "mongoose": "^3.8.21",
-    "mongoose-shortid": "^0.4.2",
+    "mongoose-shortid": "git+https://github.com/hjr265/mongoose-shortid.git",
     "request": "^2.51.0",
     "stylus": "^0.49.3",
     "underscore": "^1.7.0"
